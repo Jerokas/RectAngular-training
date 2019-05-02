@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Rectangle, Unit } from './rectangle';
+import { RECTANGLES } from './mock-rectangles';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'rectangular-training';
-}
+  title = 'RectAngular';
+  }
+

@@ -1,0 +1,34 @@
+<div *ngIf="rectangle" [class.selected]="rectangle === selectedRectangle" (click)="onSelect(hero)">
+  <h2>{{rectangle.name | uppercase}}</h2>
+  <div><span>id: </span>{{rectangle.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="rectangle.name" placeholder="name"/>
+    </label>
+    <br>
+    <label>length:
+      <input [(ngModel)]="rectangle.length" (ngModelChange)="handleLengthChange($event)" type="number" class="form-control" placeholder="length" id="area" name="length"/> 
+    </label>
+    <br>
+    <label>width:
+      <input [(ngModel)]="rectangle.width" (ngModelChange)="handleWidthChange($event)" type="number" class="form-control" placeholder="width" id="width" name="width"/>
+    </label>
+    <br>
+    <div class="form-group">
+      <form>
+        <label for="units">units</label>
+        <select [(ngModel)]="unit" (ngModelChange)="handleUnitChange($event)" id="units" class="form-control" name="unit"  required>
+          <option *ngFor="let unit of units" [value]="unit" >{{unit}}</option>
+        </select>
+      </form>
+    </div>
+  
+
+
+    <h4>This rectangle named {{rectangle.name}} has a length of {{rectangle.length}} {{unit}}, 
+    a width of {{rectangle.width}} {{unit}}.</h4>
+
+    <h4> Thus, it's area is: {{rectangle.area}} {{unit}}</h4>
+    <button  type="submit" class="btn btn-success">Submit</button>
+  </div>
+</div>

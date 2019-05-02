@@ -1,0 +1,12 @@
+<h2>Rectangular list</h2>
+
+<ul class="rectangles">
+  <li *ngFor="let rectangle of rectangles"
+    [class.selected]="rectangle === selectedRectangle"
+    (click)="onSelect(rectangle)">
+    <span class="badge">{{rectangle.id}}</span> {{rectangle.name}} {{rectangle.area}}
+  </li>
+</ul>
+
+<app-area-calculator [rectangle]="selectedRectangle"></app-area-calculator>
+
